@@ -1,0 +1,50 @@
+.altura-navbar {
+	height: 50px;
+}
+
+.cor-padrao {
+	color: #6b03fc;
+
+}
+
+.cor-padrao-background {
+	background-color: #6b03fc;
+	color: white;
+
+}
+
+.largura-lateral {
+	width: 200px;
+	
+}
+
+.conteudo-body {
+	left: 203px;
+	border-width:5px;
+	border-color: red;
+}
+
+.titulo-pagina {
+	font-size: 20;
+	font-style: inherit;
+}
+
+.font-size-tabela {
+	font-size: 10;
+}
+
+.button-novo {
+	width: 50px;
+}
+
+.button-no-border {
+	border:0!important;
+}
+
+.cor-secundaria {
+	color: #FFF;
+}
+
+.td-font-size {
+	font-size: 12px;
+}
