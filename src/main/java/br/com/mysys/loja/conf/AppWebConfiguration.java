@@ -88,6 +88,7 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 	public CacheManager cacheManger() {
 		CacheBuilder<Object, Object> builder = CacheBuilder.newBuilder().maximumSize(100).expireAfterAccess(5,
 				TimeUnit.MINUTES);
+	
 		GuavaCacheManager manager = new GuavaCacheManager();
 		manager.setCacheBuilder(builder);
 		return  manager; //new ConcurrentMapCacheManager();

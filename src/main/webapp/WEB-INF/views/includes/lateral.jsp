@@ -5,7 +5,7 @@
 		class="col-md-3 col-sm-2 col-lg-1 d-md-block bg-light sidebar collapse">
 		<div class="sidebar-sticky pt-3">
 			<ul class="nav flex-column">
-				<li class="nav-item dropdown">
+				<li class="nav-item dropright">
 			        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			          Cadastros
 			        </a>
