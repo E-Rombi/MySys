@@ -1,4 +1,4 @@
-package br.com.mysys.loja.controllers;
+package br.com.mysys.loja.validation;
 
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;

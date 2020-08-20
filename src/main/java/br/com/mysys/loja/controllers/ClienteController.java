@@ -12,6 +12,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -34,12 +35,14 @@ public class ClienteController {
 	@Autowired 
 	private EnderecoDAO enderecoDAO;
 	
-//	@InitBinder
-//	public void initBinder(WebDataBinder binder) {
-//		binder.addValidators(new ClienteValidation());
-//		binder.addValidators(new EnderecoValidation());
-//	}
-
+	/*
+	@InitBinder
+	public void initBinder(WebDataBinder binder) {
+		binder.addValidators(new ClienteValidation());
+		binder.addValidators(new EnderecoValidation());
+	}
+	 */
+	
 	@RequestMapping(method = RequestMethod.GET)
 	@Cacheable(value = "ClientesHome")
 	public ModelAndView menu() {
@@ -57,8 +60,6 @@ public class ClienteController {
 		
 		return modelAndView;
 	}
-	
-	
 
 	@RequestMapping("/edit/{id}")
 	public ModelAndView edit(@PathVariable("id") Integer id) {

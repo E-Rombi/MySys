@@ -1,6 +1,5 @@
 package br.com.mysys.loja.controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -13,14 +12,15 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.mysys.loja.dao.RoleDAO;
 import br.com.mysys.loja.dao.UserDAO;
-import br.com.mysys.loja.models.Role;
 import br.com.mysys.loja.models.Usuario;
 import br.com.mysys.loja.validation.UsuarioValidation;
 
@@ -57,6 +57,7 @@ public class UsuarioController {
 	}
 	
 	@RequestMapping("/edit/{id}")
+	@ResponseBody
 	public ModelAndView edit(@PathVariable("id") Integer id) {
 		ModelAndView mav = new ModelAndView("/cadastros/usuario/editUsuario");
 
@@ -78,14 +79,6 @@ public class UsuarioController {
 			return novo(usuario);
 		}
 		
-		String[] split = permissaoFinal.split("|");
-		List<Role> rolesFinal = new ArrayList<Role>();
-		for(int i = 0; i < permissaoFinal.split("|").length; i++) {
-			rolesFinal.add(roleDao.find(split[i]));
-		}
-		
-		System.out.println("rolesFINAL = " + rolesFinal);
-		usuario.setRoles(rolesFinal);
 		usuarioDao.persist(usuario);
 		
 		redirectAttributes.addFlashAttribute("message", "Usuário cadastrado com sucesso!");
